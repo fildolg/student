@@ -14,10 +14,34 @@ justify-content: center;
     </style>
 </head>
 <body>
+<span id="Time"></span>
  <img src="iPhone 13 mini - 2.svg" style="width: 95vw;" alt="abc" >
     
     <script>
-       
-    </script>
+      
+function updateTime() {
+    const now = new Date();
+
+    // Helper function to add leading zeros
+    const pad = (num) => String(num).padStart(2, '0');
+
+    const day = pad(now.getDate());
+    const month = pad(now.getMonth() + 1); // Months are zero-based
+    const year = now.getFullYear();
+
+    const hours = pad(now.getHours());
+    const minutes = pad(now.getMinutes());
+    const seconds = pad(now.getSeconds());
+
+    const timeString = `${day}-${month}-${year} ⏐ ${hours}:${minutes}:${seconds}`;
+
+    document.getElementById('Time').textContent = timeString;
+}
+
+// Update time immediately and then every second
+updateTime();
+setInterval(updateTime, 1000);
+</script>
+   
 </body>
 </html>
