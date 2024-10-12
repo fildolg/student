@@ -1,36 +1,555 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" name="apple-mobile-web-app-capable" content="yes">
     <title>My Web Page</title>
 
     <!-- Internal CSS -->
     <style>
        body {
-display: flex;
-justify-content: center;
+         display: flex;
+         justify-content: center;
+       }
+
+       span {
+         position: absolute;
+         top: 38px;
+         left: 356px;
+         color: white;
+         font-size: 28px;
+         font-family: Tahoma, sans-serif;
+         letter-spacing: 4px;
+       }
+
+       .wrapper {
+         position: relative;
+       }
+
+       .wrapper img {
+         position: absolute;
+         width: 155px;
+       }
+
+       .karta {
+        position: absolute;
+        overflow: hidden;
+        opacity: 0.5;
+        width: 723px;
+        height: 1153px;
+        z-index: 100;
+        top: 153px;
+        border-radius: 50px;
+
+       }
+#block1 {
+    left: -60px;
+    top: -109px;
+}
+#block2 {
+    left: 150px;
+    top: 40px;
+}
+#block2 img {
+transform: rotateZ(60deg);
+}
+#block3 {
+    left: 398px;
+    top: -90px;
+}
+#block4 {
+    left: -60px;
+    top: 333px;
+}
+#block4 img {
+transform: rotateZ(-5deg);
+}
+#block5 {
+    left: 240px;
+    top: 330px;
+}
+#block5 img {
+transform: rotateZ(15deg);
+}
+#block6 {
+    left: 540px;
+    top: 170px;
+}
+#block6 img {
+transform: rotateZ(-65deg);
+}
+#block7 {
+    left: 520px;
+    top: 532px;
+}
+#block7 img {
+transform: rotateZ(40deg);
+}
+#block8 {
+    left: 240px;
+    top: 630px;
+}
+#block8 img {
+transform: rotateZ(68deg);
+}
+#block9 {
+    left: -67px;
+    top: 727px;
+}
+#block10 {
+    left: 320px;
+    top: 871px;
+}
+#block10 img {
+transform: rotateZ(-10deg);
 }
 
-span {
-position: absolute;
-top: 50px;
-left: 473px;
-color: white;
-font-size: 36px;
-font-family: Tahoma, sans-serif;
-letter-spacing: 2px;
-
+#block11 {
+    left: 590px;
+    top: 791px;
 }
-        
+#block2 img {
+transform: rotateZ(15deg);
+}
+#block12 {
+    left: 20px;
+    top: 1050px;
+}
+#block12 img {
+transform: rotateZ(20deg);
+}
+#block13 {
+    left: 620px;
+    top: 1050px;
+}
+
+
+
+/* Initial setup: make all images in block1 and block2 transparent */
+#block1 > img, #block2 > img, #block3 > img, #block4 > img, #block5 > img, #block6 > img, #block7 > img, #block8 > img, #block9 > img, #block10 > img, #block11 > img, #block12 > img, #block13 > img {
+  opacity: 0;
+  animation-timing-function: linear;
+  animation-fill-mode: both;
+}
+
+/* Keyframes for fade-in and fade-out */
+@keyframes fadeInOut {
+  0%, 100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Block 1 Images */
+#block1 > #img1 {
+  animation: fadeInOut 1s linear infinite;
+}
+#block1 > #img2 {
+  animation: fadeInOut 1s linear infinite;
+  animation-delay: 0.25s; /* Stagger start of each image */
+}
+#block1 > #img3 {
+  animation: fadeInOut 1s linear infinite;
+  animation-delay: 0.5s;
+}
+#block1 > #img4 {
+  animation: fadeInOut 1s linear infinite;
+  animation-delay: 0.75s;
+}
+
+/* Block 1 Wrapper */
+@keyframes fadeWrapper {
+  0%, 100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+#block1 {
+  animation: fadeWrapper 2s linear infinite;
+}
+
+/* Block 2 Images */
+#block2 > #img1 {
+  animation: fadeInOut 1s linear infinite;
+}
+#block2 > #img2 {
+  animation: fadeInOut 1s linear infinite;
+  animation-delay: 0.25s;
+}
+#block2 > #img3 {
+  animation: fadeInOut 1s linear infinite;
+  animation-delay: 0.5s;
+}
+#block2 > #img4 {
+  animation: fadeInOut 1s linear infinite;
+  animation-delay: 0.75s;
+}
+
+/* Block 2 Wrapper */
+#block2 {
+  animation: fadeWrapper 2s linear infinite;
+  animation-duration: 4s; /* Different duration for block2 */
+}
+
+/* Block 3 Images */
+#block3 > #img1 {
+  animation: fadeInOut 1s linear infinite;
+}
+#block3 > #img2 {
+  animation: fadeInOut 1s linear infinite;
+  animation-delay: 0.25s;
+}
+#block3 > #img3 {
+  animation: fadeInOut 1s linear infinite;
+  animation-delay: 0.5s;
+}
+#block3 > #img4 {
+  animation: fadeInOut 1s linear infinite;
+  animation-delay: 0.75s;
+}
+
+/* Block 3 Wrapper */
+#block3 {
+  animation: fadeWrapper 2s linear infinite;
+  animation-duration: 4s; /* Different duration for block2 */
+}
+
+/* Block 4 Images */
+#block4 > #img1 {
+  animation: fadeInOut 1s linear infinite;
+}
+#block4 > #img2 {
+  animation: fadeInOut 1s linear infinite;
+  animation-delay: 0.25s;
+}
+#block4 > #img3 {
+  animation: fadeInOut 1s linear infinite;
+  animation-delay: 0.5s;
+}
+#block4 > #img4 {
+  animation: fadeInOut 1s linear infinite;
+  animation-delay: 0.75s;
+}
+
+/* Block 4 Wrapper */
+#block4 {
+  animation: fadeWrapper 2s linear infinite;
+  animation-duration: 4s; /* Different duration for block2 */
+}
+
+/* Block 5 Images */
+#block5 > #img1 {
+  animation: fadeInOut 1s linear infinite;
+}
+#block5 > #img2 {
+  animation: fadeInOut 1s linear infinite;
+  animation-delay: 0.25s;
+}
+#block5 > #img3 {
+  animation: fadeInOut 1s linear infinite;
+  animation-delay: 0.5s;
+}
+#block5 > #img4 {
+  animation: fadeInOut 1s linear infinite;
+  animation-delay: 0.75s;
+}
+
+/* Block 5 Wrapper */
+#block5 {
+  animation: fadeWrapper 2s linear infinite;
+  animation-duration: 4s; /* Different duration for block2 */
+}
+
+/* Block 6 Images */
+#block6 > #img1 {
+  animation: fadeInOut 1s linear infinite;
+}
+#block6 > #img2 {
+  animation: fadeInOut 1s linear infinite;
+  animation-delay: 0.25s;
+}
+#block6 > #img3 {
+  animation: fadeInOut 1s linear infinite;
+  animation-delay: 0.5s;
+}
+#block6 > #img4 {
+  animation: fadeInOut 1s linear infinite;
+  animation-delay: 0.75s;
+}
+
+/* Block 6 Wrapper */
+#block6 {
+  animation: fadeWrapper 2s linear infinite;
+  animation-duration: 4s; /* Different duration for block2 */
+}
+
+/* Block 7 Images */
+#block7 > #img1 {
+  animation: fadeInOut 1s linear infinite;
+}
+#block7 > #img2 {
+  animation: fadeInOut 1s linear infinite;
+  animation-delay: 0.25s;
+}
+#block7 > #img3 {
+  animation: fadeInOut 1s linear infinite;
+  animation-delay: 0.5s;
+}
+#block7 > #img4 {
+  animation: fadeInOut 1s linear infinite;
+  animation-delay: 0.75s;
+}
+
+/* Block 7 Wrapper */
+#block7 {
+  animation: fadeWrapper 2s linear infinite;
+  animation-duration: 4s; /* Different duration for block2 */
+}
+
+/* Block 8 Images */
+#block8 > #img1 {
+  animation: fadeInOut 1s linear infinite;
+}
+#block8 > #img2 {
+  animation: fadeInOut 1s linear infinite;
+  animation-delay: 0.25s;
+}
+#block8 > #img3 {
+  animation: fadeInOut 1s linear infinite;
+  animation-delay: 0.5s;
+}
+#block8 > #img4 {
+  animation: fadeInOut 1s linear infinite;
+  animation-delay: 0.75s;
+}
+
+/* Block 8 Wrapper */
+#block8 {
+  animation: fadeWrapper 2s linear infinite;
+  animation-duration: 4s; /* Different duration for block2 */
+}
+
+/* Block 9 Images */
+#block9 > #img1 {
+  animation: fadeInOut 1s linear infinite;
+}
+#block9 > #img2 {
+  animation: fadeInOut 1s linear infinite;
+  animation-delay: 0.25s;
+}
+#block9 > #img3 {
+  animation: fadeInOut 1s linear infinite;
+  animation-delay: 0.5s;
+}
+#block9 > #img4 {
+  animation: fadeInOut 1s linear infinite;
+  animation-delay: 0.75s;
+}
+
+/* Block 9 Wrapper */
+#block9 {
+  animation: fadeWrapper 2s linear infinite;
+  animation-duration: 4s; /* Different duration for block2 */
+}
+
+/* Block 10 Images */
+#block10 > #img1 {
+  animation: fadeInOut 1s linear infinite;
+}
+#block10 > #img2 {
+  animation: fadeInOut 1s linear infinite;
+  animation-delay: 0.25s;
+}
+#block10 > #img3 {
+  animation: fadeInOut 1s linear infinite;
+  animation-delay: 0.5s;
+}
+#block10 > #img4 {
+  animation: fadeInOut 1s linear infinite;
+  animation-delay: 0.75s;
+}
+
+/* Block 10 Wrapper */
+#block10 {
+  animation: fadeWrapper 2s linear infinite;
+  animation-duration: 4s; /* Different duration for block2 */
+}
+
+/* Block 11 Images */
+#block11 > #img1 {
+  animation: fadeInOut 1s linear infinite;
+}
+#block11 > #img2 {
+  animation: fadeInOut 1s linear infinite;
+  animation-delay: 0.25s;
+}
+#block11 > #img3 {
+  animation: fadeInOut 1s linear infinite;
+  animation-delay: 0.5s;
+}
+#block11 > #img4 {
+  animation: fadeInOut 1s linear infinite;
+  animation-delay: 0.75s;
+}
+
+/* Block 11 Wrapper */
+#block11 {
+  animation: fadeWrapper 2s linear infinite;
+  animation-duration: 4s; /* Different duration for block2 */
+}
+
+/* Block 12 Images */
+#block12 > #img1 {
+  animation: fadeInOut 1s linear infinite;
+}
+#block12 > #img2 {
+  animation: fadeInOut 1s linear infinite;
+  animation-delay: 0.25s;
+}
+#block12 > #img3 {
+  animation: fadeInOut 1s linear infinite;
+  animation-delay: 0.5s;
+}
+#block12 > #img4 {
+  animation: fadeInOut 1s linear infinite;
+  animation-delay: 0.75s;
+}
+
+/* Block 12 Wrapper */
+#block12 {
+  animation: fadeWrapper 2s linear infinite;
+  animation-duration: 4s; /* Different duration for block2 */
+}
+
+/* Block 13 Images */
+#block13 > #img1 {
+  animation: fadeInOut 1s linear infinite;
+}
+#block13 > #img2 {
+  animation: fadeInOut 1s linear infinite;
+  animation-delay: 0.25s;
+}
+#block13 > #img3 {
+  animation: fadeInOut 1s linear infinite;
+  animation-delay: 0.5s;
+}
+#block13 > #img4 {
+  animation: fadeInOut 1s linear infinite;
+  animation-delay: 0.75s;
+}
+
+/* Block 13 Wrapper */
+#block13 {
+  animation: fadeWrapper 2s linear infinite;
+  animation-duration: 4s; /* Different duration for block2 */
+}
+
     </style>
 </head>
 <body>
-<span id="Time"></span>
- <img src="iPhone 13 mini - 2.svg" style="width: 95vw;" alt="abc" >
-    
-    <script>
+
+
+ <div class="karta"> 
+
+    <div class="wrapper" id="block1">
+        <img id="img1" src="file:///Users/filipdolansky/Downloads/1.svg">
+        <img id="img2" src="file:///Users/filipdolansky/Downloads/2.svg">
+        <img id="img3" src="file:///Users/filipdolansky/Downloads/3.svg">
+        <img id="img4" src="file:///Users/filipdolansky/Downloads/4.svg">
+      </div>
+
+      <div class="wrapper" id="block2">
+        <img id="img1" src="file:///Users/filipdolansky/Downloads/1.svg">
+        <img id="img2" src="file:///Users/filipdolansky/Downloads/2.svg">
+        <img id="img3" src="file:///Users/filipdolansky/Downloads/3.svg">
+        <img id="img4" src="file:///Users/filipdolansky/Downloads/4.svg">
+      </div>
+      <div class="wrapper" id="block3">
+        <img id="img1" src="file:///Users/filipdolansky/Downloads/1.svg">
+        <img id="img2" src="file:///Users/filipdolansky/Downloads/2.svg">
+        <img id="img3" src="file:///Users/filipdolansky/Downloads/3.svg">
+        <img id="img4" src="file:///Users/filipdolansky/Downloads/4.svg">
+      </div>
+      <div class="wrapper" id="block4">
+        <img id="img1" src="file:///Users/filipdolansky/Downloads/1.svg">
+        <img id="img2" src="file:///Users/filipdolansky/Downloads/2.svg">
+        <img id="img3" src="file:///Users/filipdolansky/Downloads/3.svg">
+        <img id="img4" src="file:///Users/filipdolansky/Downloads/4.svg">
+      </div>
+      <div class="wrapper" id="block5">
+        <img id="img1" src="file:///Users/filipdolansky/Downloads/1.svg">
+        <img id="img2" src="file:///Users/filipdolansky/Downloads/2.svg">
+        <img id="img3" src="file:///Users/filipdolansky/Downloads/3.svg">
+        <img id="img4" src="file:///Users/filipdolansky/Downloads/4.svg">
+      </div>
+      <div class="wrapper" id="block6">
+        <img id="img1" src="file:///Users/filipdolansky/Downloads/1.svg">
+        <img id="img2" src="file:///Users/filipdolansky/Downloads/2.svg">
+        <img id="img3" src="file:///Users/filipdolansky/Downloads/3.svg">
+        <img id="img4" src="file:///Users/filipdolansky/Downloads/4.svg">
+      </div>
+      <div class="wrapper" id="block7">
+        <img id="img1" src="file:///Users/filipdolansky/Downloads/1.svg">
+        <img id="img2" src="file:///Users/filipdolansky/Downloads/2.svg">
+        <img id="img3" src="file:///Users/filipdolansky/Downloads/3.svg">
+        <img id="img4" src="file:///Users/filipdolansky/Downloads/4.svg">
+      </div>
+      <div class="wrapper" id="block8">
+        <img id="img1" src="file:///Users/filipdolansky/Downloads/1.svg">
+        <img id="img2" src="file:///Users/filipdolansky/Downloads/2.svg">
+        <img id="img3" src="file:///Users/filipdolansky/Downloads/3.svg">
+        <img id="img4" src="file:///Users/filipdolansky/Downloads/4.svg">
+      </div>
+      <div class="wrapper" id="block9">
+        <img id="img1" src="file:///Users/filipdolansky/Downloads/1.svg">
+        <img id="img2" src="file:///Users/filipdolansky/Downloads/2.svg">
+        <img id="img3" src="file:///Users/filipdolansky/Downloads/3.svg">
+        <img id="img4" src="file:///Users/filipdolansky/Downloads/4.svg">
+      </div>
+      <div class="wrapper" id="block10">
+        <img id="img1" src="file:///Users/filipdolansky/Downloads/1.svg">
+        <img id="img2" src="file:///Users/filipdolansky/Downloads/2.svg">
+        <img id="img3" src="file:///Users/filipdolansky/Downloads/3.svg">
+        <img id="img4" src="file:///Users/filipdolansky/Downloads/4.svg">
+      </div>
+      <div class="wrapper" id="block11">
+        <img id="img1" src="file:///Users/filipdolansky/Downloads/1.svg">
+        <img id="img2" src="file:///Users/filipdolansky/Downloads/2.svg">
+        <img id="img3" src="file:///Users/filipdolansky/Downloads/3.svg">
+        <img id="img4" src="file:///Users/filipdolansky/Downloads/4.svg">
+      </div>
+      <div class="wrapper" id="block12">
+        <img id="img1" src="file:///Users/filipdolansky/Downloads/1.svg">
+        <img id="img2" src="file:///Users/filipdolansky/Downloads/2.svg">
+        <img id="img3" src="file:///Users/filipdolansky/Downloads/3.svg">
+        <img id="img4" src="file:///Users/filipdolansky/Downloads/4.svg">
+      </div>
+      <div class="wrapper" id="block13">
+        <img id="img1" src="file:///Users/filipdolansky/Downloads/1.svg">
+        <img id="img2" src="file:///Users/filipdolansky/Downloads/2.svg">
+        <img id="img3" src="file:///Users/filipdolansky/Downloads/3.svg">
+        <img id="img4" src="file:///Users/filipdolansky/Downloads/4.svg">
+      </div>
+
       
-function updateTime() {
+
+ </div>   
+<div style="position: relative; overflow: hidden;">
+  <span id="Time"></span>
+
+  
+
+  
+
+  <img src="file:///Users/filipdolansky/Downloads/iPhone 13 mini - 2.svg" style="width: 780px; padding: auto" alt="abc" >
+</div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  function updateTime() {
     const now = new Date();
 
     // Helper function to add leading zeros
@@ -47,12 +566,54 @@ function updateTime() {
     const timeString = `${day}-${month}-${year} ⏐ ${hours}:${minutes}:${seconds}`;
 
     document.getElementById('Time').textContent = timeString;
-}
+  }
 
-// Update time immediately and then every second
-updateTime();
-setInterval(updateTime, 1000);
+  // Update time immediately and then every second
+  updateTime();
+  setInterval(updateTime, 1000);
+
+  // Disable scrolling
+  document.body.style.overflow = 'hidden';
+
+  // Create an overlay to block interactions
+  var overlay = document.createElement('div');
+  overlay.id = 'interaction-blocker';
+  overlay.style.position = 'fixed';
+  overlay.style.top = '0';
+  overlay.style.left = '0';
+  overlay.style.width = '100%';
+  overlay.style.height = '100%';
+  overlay.style.zIndex = '9999';
+  overlay.style.backgroundColor = 'transparent'; // Optional: make the overlay transparent
+
+  // Append the overlay to the body
+  document.body.appendChild(overlay);
+
+  // Prevent pointer events on the overlay
+  overlay.addEventListener('pointerdown', function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+  }, true);
+
+  // Prevent all key events
+  document.addEventListener('keydown', function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+  }, true);
+
+  document.addEventListener('keypress', function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+  }, true);
+
+  document.addEventListener('keyup', function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+  }, true);
+
+
+
 </script>
-   
+
 </body>
 </html>
